@@ -1,0 +1,25 @@
+From 59710bbbb825e0baa1f01a240a5290eed87ce40c Mon Sep 17 00:00:00 2001
+From: Zoltan Kuscsik <zoltan.kuscsik@linaro.org>
+Date: Fri, 21 Mar 2014 13:16:59 +0100
+Subject: [PATCH] Added i32 flag.
+
+---
+ src/core/gyp_run.pro | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/core/gyp_run.pro b/src/core/gyp_run.pro
+index 7828598..fe42adb 100644
+--- a/src/core/gyp_run.pro
++++ b/src/core/gyp_run.pro
+@@ -6,7 +6,7 @@ TEMPLATE = aux
+ 
+ GYP_ARGS = "-D qt_cross_compile=0"
+ cross_compile {
+-    GYP_ARGS = "-D qt_cross_compile=1 -D os_posix=1"
++    GYP_ARGS = "-D qt_cross_compile=1 -D os_posix=1 -D target_arch=ia32"
+     TOOLCHAIN_SYSROOT = $$[QT_SYSROOT]
+ 
+     android {
+-- 
+1.9.0
+
