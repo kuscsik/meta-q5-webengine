@@ -1,0 +1,13 @@
+diff --git a/gnome-keyring-daemon-io.c b/gnome-keyring-daemon-io.c
+index 6f921b8..477d797 100644
+--- a/gnome-keyring-daemon-io.c
++++ b/gnome-keyring-daemon-io.c
+@@ -180,7 +180,7 @@ read_unix_socket_credentials (int fd,
+ #endif
+ 
+ 	{
+-#ifdef SO_PEERCRED
++#if defined(SO_PEERCRED) && defined(HAVE_GETPEERUCRED)
+ 		struct ucred cr;   
+ 		socklen_t cr_len = sizeof (cr);
+ 		
