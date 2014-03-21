@@ -32,6 +32,7 @@ SRC_URI = "git://git.gitorious.org/qt-labs/qtwebengine.git"
 SRC_URI[md5sum] = ""
 SRC_URI[sha256sum] = ""
 
+PACKAGE_DEBUG_SPLIT_STYLE = "debug-without-src"
 
 require recipes-qt/qt5/qt5.inc
 
@@ -62,10 +63,9 @@ do_configure(){
 
 do_compile(){
     cd ${S}
-    make
+    make -B
 }
 
-do_install() {
+do_install_prepend() {
     cd ${S}
-    make install
 }
